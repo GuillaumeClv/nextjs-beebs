@@ -9,3 +9,15 @@ export async function fetchData() {
         return []
     }
 }
+
+export async function getTags() {
+    try {
+        let data = await fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?select=*&group_by=tags')
+        let tags = await data.json()
+        return tags
+    
+    } catch (error) {
+        console.error(error)
+        return []
+    }
+}
