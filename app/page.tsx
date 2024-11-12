@@ -2,8 +2,10 @@ import { fetchData, getTags } from "./lib/data";
 import { Grid } from "./ui/Grid";
 
 export default async function Home() {
-  const posts = await fetchData()
-  const tags = await getTags()
+  const postsData = await fetchData()
+  const tagsData = await getTags()
+
+  const [posts, tags] = await Promise.all([postsData, tagsData])
 
    return (
     <div className="container mx-auto p-4 grid justify-items-center">
