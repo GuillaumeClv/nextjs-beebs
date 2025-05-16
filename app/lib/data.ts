@@ -9,13 +9,6 @@ export async function fetchData() {
     }
 }
 
-export async function getTags() {
-    try {
-        let data = await fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?select=*&group_by=tags')
-        return await data.json()
-    
-    } catch (error) {
-        console.error(error)
-        return []
-    }
+export  function getAccessType() {
+    return ["conseillée", "obligatoire", "reset"] as accessType[]
 }

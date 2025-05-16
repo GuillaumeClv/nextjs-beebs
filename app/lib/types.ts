@@ -1,0 +1,1 @@
+type accessType = "conseillée" | "obligatoire" | "reset"
