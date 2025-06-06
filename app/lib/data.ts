@@ -12,3 +12,8 @@ export async function fetchData() {
 export  function getAccessType() {
     return ["conseillée", "obligatoire", "reset"] as accessType[]
 }
+
+export async function getVercelBlog() {
+    const posts = await fetch("http://localhost:3000/items")
+    console.log(await posts.json())
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "./ui/Navbar";
+import { WebVitals } from './ui/WebVitals'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,11 +25,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <WebVitals />
         <div className="container mx-auto p-4 grid justify-items-center">
           <h1 className="text-center text-2xl p-16">Bienvenue sur Que faire à paris </h1>
           <Navbar />
